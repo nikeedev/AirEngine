@@ -42,7 +42,7 @@
     <Compile Include="AirEngine\Shape2D.cs" />
     <Compile Include="AirEngine\Vector2.cs" />
     <Compile Include="DemoGame.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="main.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
