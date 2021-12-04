@@ -31,8 +31,9 @@ namespace AirEngine.AirEngine
 
         public Color BackgroundColor;
 
-        public AirEngine(Vector2 ScreenSize, string Title) { 
-            
+        public AirEngine(Vector2 ScreenSize, string Title) 
+        {
+            Log.Info("Game is starting...");    
             this.ScreenSize = ScreenSize;
             this.Title = Title;
 
@@ -71,9 +72,9 @@ namespace AirEngine.AirEngine
                     OnUpdate();
                     Thread.Sleep(1);
                 }
-                catch
-                {
-                    Console.WriteLine("Loading Game...");
+                catch 
+                { 
+                    Log.Error("Game has not been found...");
                 }
             }
         }
@@ -83,6 +84,11 @@ namespace AirEngine.AirEngine
         {
             Graphics g = e.Graphics;
             g.Clear(BackgroundColor);
+
+            foreach(Shape2D shape in AllShapes)
+            {
+                g.FillRectangle(new SolidBrush(Color.Gold), shape.Position.X, shape.Position.Y, shape.Scale.X, shape.Scale.Y);
+            }
             
         }
 

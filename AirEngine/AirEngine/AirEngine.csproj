@@ -39,6 +39,7 @@
     <Compile Include="AirEngine\AirEngine.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="AirEngine\Log.cs" />
     <Compile Include="AirEngine\Shape2D.cs" />
     <Compile Include="AirEngine\Vector2.cs" />
     <Compile Include="DemoGame.cs" />

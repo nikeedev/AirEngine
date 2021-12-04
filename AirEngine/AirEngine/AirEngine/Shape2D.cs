@@ -18,7 +18,15 @@ namespace AirEngine.AirEngine
             this.Scale = Scale;
             this.Tag = Tag;
 
+            Log.Info($"[SHAPE 2D]({Tag}) - Has been registred");
+  
             AirEngine.RegisterShape(this);
+        }
+
+        public void DestroySelf()
+        {
+            Log.Info($"[SHAPE 2D]({Tag}) - Has been destroyed.");
+            AirEngine.UnregisterShape(this);
         }
     }
 }
