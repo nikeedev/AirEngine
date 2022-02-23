@@ -36,12 +36,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AirEngine_Codes\AirEngine.cs">
+    <Compile Include="AirEngine\AirEngine.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AirEngine_Codes\Log.cs" />
-    <Compile Include="AirEngine_Codes\Shape2D.cs" />
-    <Compile Include="AirEngine_Codes\Vector2.cs" />
+    <Compile Include="AirEngine\Log.cs" />
+    <Compile Include="AirEngine\Shape2D.cs" />
+    <Compile Include="AirEngine\Sprite2D.cs" />
+    <Compile Include="AirEngine\Vector2.cs" />
     <Compile Include="DemoGame.cs" />
     <Compile Include="main.cs" />
   </ItemGroup>
@@ -49,6 +50,10 @@
     <Reference Include="System" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Circle.png" />
+    <Content Include="Assets\Square.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

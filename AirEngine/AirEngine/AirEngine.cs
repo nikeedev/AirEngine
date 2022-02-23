@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Threading;
 
+
 namespace AirEngine.AirEngine
 {
     class Canvas : Form
@@ -26,7 +27,7 @@ namespace AirEngine.AirEngine
 
 
         private static List<Shape2D> AllShapes = new List<Shape2D>();
-
+        private static List<Sprite2D> AllSprites = new List<Sprite2D>(); 
 
 
         public Color BackgroundColor;
@@ -60,6 +61,17 @@ namespace AirEngine.AirEngine
         {
             AllShapes.Remove(shape);
         }
+
+        public static void RegisterSprite(Sprite2D sprite)
+        {
+            AllSprites.Add(sprite);
+        }
+        public static void UnregisterSprite(Sprite2D sprite)
+        {
+            AllSprites.Remove(sprite);
+        }
+
+
         void GameLoop()
         {
             OnLoad();
@@ -83,12 +95,14 @@ namespace AirEngine.AirEngine
         private void Renderer(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
+
             g.Clear(BackgroundColor);
 
             foreach(Shape2D shape in AllShapes)
             {
                 g.FillRectangle(new SolidBrush(Color.Gold), shape.Position.X, shape.Position.Y, shape.Scale.X, shape.Scale.Y);
             }
+            
             
         }
 

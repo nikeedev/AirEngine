@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Drawing;
 using AirEngine.AirEngine;
 
+
 namespace AirEngine
 {
     class DemoGame : AirEngine.AirEngine
@@ -25,14 +26,10 @@ namespace AirEngine
             
         }
 
-        int time = 0;
+
         public override void OnUpdate()
         {
-            if (time > 400)
-            {
-                player.DestroySelf();
-            }
-            time++;
+            
         }
     }
 }
