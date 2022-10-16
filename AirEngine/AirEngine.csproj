@@ -8,7 +8,7 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>AirEngine</RootNamespace>
     <AssemblyName>AirEngine</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\Circle.png" />
+    <Content Include="assets\Fishrod.ico" />
     <Content Include="assets\Square.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

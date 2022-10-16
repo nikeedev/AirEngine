@@ -41,6 +41,7 @@ namespace AirEngine.AirEngine
             Window = new Canvas();
             Window.Size = new Size((int)this.ScreenSize.Width, (int)this.ScreenSize.Height);
             Window.Text = this.Title;
+            Window.Icon = new Icon("../../assets/Fishrod.ico");
             Window.Paint += Renderer;
 
 

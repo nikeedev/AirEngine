@@ -40,7 +40,16 @@ namespace AirEngine
         public override void OnUpdate()
         {
 
-            //playerShape.position.X += 1;
+            playerShape.position.X += 1;
+            playerShape.scale.Width += 1;
+            playerShape.position.Y += 1;
+            playerShape.scale.Height += 1;
+
+            playerSprite.position.X += 1;
+            playerSprite.scale.Width += 1;
+            playerSprite.position.Y += 1;
+            playerSprite.scale.Height += 1;
+
         }
     }
 }
