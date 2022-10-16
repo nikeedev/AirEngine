@@ -13,21 +13,13 @@ namespace AirEngine.AirEngine
 
         public Vector2()
         {
-            X = Zero().X;
-            Y = Zero().Y;
+            this.X = 0;
+            this.Y = 0;
         }
         public Vector2(float X, float Y)
         {
             this.X = X;
             this.Y = Y;
-        }
-        /// <summary>
-        /// Returns X & Y as 0
-        /// </summary>
-        /// <returns></returns>
-        public static Vector2 Zero()
-        {
-            return new Vector2(0,0);
         }
     }
 }

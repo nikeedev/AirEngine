@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AirEngine
 {
-    class main
+    class Game
     {
         static void Main(string[] args)
         {

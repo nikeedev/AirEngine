@@ -41,10 +41,11 @@
     </Compile>
     <Compile Include="AirEngine\Log.cs" />
     <Compile Include="AirEngine\Shape2D.cs" />
+    <Compile Include="AirEngine\ObjectSize.cs" />
     <Compile Include="AirEngine\Sprite2D.cs" />
     <Compile Include="AirEngine\Vector2.cs" />
     <Compile Include="DemoGame.cs" />
-    <Compile Include="main.cs" />
+    <Compile Include="Game.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -52,8 +53,8 @@
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\Circle.png" />
-    <Content Include="Assets\Square.png" />
+    <Content Include="assets\Circle.png" />
+    <Content Include="assets\Square.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

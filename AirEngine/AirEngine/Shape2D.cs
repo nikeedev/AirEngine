@@ -2,30 +2,32 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Drawing;
 using System.Threading.Tasks;
 
 namespace AirEngine.AirEngine
 {
     public class Shape2D
     {
-        public Vector2 Position = null;
-        public Vector2 Scale = null;
-        public string Tag = "";
+        public Vector2 position = null;
+        public ObjectSize scale = null;
+        public string tag = "";
+        public Color color = Color.White;
 
-        public Shape2D(Vector2 Position, Vector2 Scale, string Tag)
+        public Shape2D(Vector2 position, ObjectSize scale, string tag)
         {
-            this.Position = Position;
-            this.Scale = Scale;
-            this.Tag = Tag;
+            this.position = position;
+            this.scale = scale;
+            this.tag = tag;
 
-            Log.Info($"[SHAPE 2D]({Tag}) - Has been registred");
+            Log.Info($"[SHAPE 2D]({tag}) - Has been registred");
   
             AirEngine.RegisterShape(this);
         }
 
         public void DestroySelf()
         {
-            Log.Info($"[SHAPE 2D]({Tag}) - Has been destroyed.");
+            Log.Info($"[SHAPE 2D]({tag}) - Has been destroyed.");
             AirEngine.UnregisterShape(this);
         }
     }

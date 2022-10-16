@@ -20,7 +20,7 @@ namespace AirEngine.AirEngine
     
     public abstract class AirEngine
     {
-        private Vector2 ScreenSize = new Vector2(512, 512);
+        private ObjectSize ScreenSize = new ObjectSize(512, 512);
         private string Title = "New Game";
         private Canvas Window = null;
         private Thread GameLoopThread = null;
@@ -32,14 +32,14 @@ namespace AirEngine.AirEngine
 
         public Color BackgroundColor;
 
-        public AirEngine(Vector2 ScreenSize, string Title) 
+        public AirEngine(ObjectSize ScreenSize, string Title) 
         {
             Log.Info("Game is starting...");    
             this.ScreenSize = ScreenSize;
             this.Title = Title;
-
+         
             Window = new Canvas();
-            Window.Size = new Size((int)this.ScreenSize.X, (int)this.ScreenSize.Y);
+            Window.Size = new Size((int)this.ScreenSize.Width, (int)this.ScreenSize.Height);
             Window.Text = this.Title;
             Window.Paint += Renderer;
 
@@ -100,10 +100,13 @@ namespace AirEngine.AirEngine
 
             foreach(Shape2D shape in AllShapes)
             {
-                g.FillRectangle(new SolidBrush(Color.Gold), shape.Position.X, shape.Position.Y, shape.Scale.X, shape.Scale.Y);
+                g.FillRectangle(new SolidBrush(Color.Gold), shape.position.X, shape.position.Y, shape.scale.Width, shape.scale.Height);
             }
-            
-            
+            foreach (Sprite2D sprite in AllSprites)
+            {
+                g.DrawImage(sprite.Sprite, sprite.position.X, sprite.position.Y, sprite.scale.Width, sprite.scale.Height);
+            }
+
         }
 
         public abstract void OnLoad();

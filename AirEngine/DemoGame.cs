@@ -11,14 +11,24 @@ namespace AirEngine
 {
     class DemoGame : AirEngine.AirEngine
     {
-        Shape2D player;
-        public DemoGame() : base(new Vector2(615, 515), "AirEngine Demo") { }
+        Shape2D playerShape;
+        Sprite2D playerSprite;
+
+        public DemoGame() : base(new ObjectSize(615, 515), "AirEngine Demo") {}
+
 
         public override void OnLoad()
         {
             BackgroundColor = Color.FromArgb(93, 115, 240);
 
-            player = new Shape2D(new Vector2(10, 10), new Vector2(10, 10), "Test");
+            playerShape = new Shape2D(new Vector2(32, 10), new ObjectSize(64, 64), "Player")
+            {
+                color = Color.Gold
+            };
+
+            playerSprite = new Sprite2D("assets/Circle.png", new Vector2(120, 10), new ObjectSize(64, 64), "Player");
+
+
         }
 
         public override void OnDraw()
@@ -29,7 +39,8 @@ namespace AirEngine
 
         public override void OnUpdate()
         {
-            
+
+            //playerShape.position.X += 1;
         }
     }
 }

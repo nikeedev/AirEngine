@@ -7,27 +7,30 @@ using System.Drawing;
 
 namespace AirEngine.AirEngine
 {
-    internal class Sprite2D
+    public class Sprite2D
     {
 
-        public Vector2 Position = null;
-        public Vector2 Scale = null;
-        public string Directory = "";
-        public string Tag = "";
+        public Vector2 position = null;
+        public ObjectSize scale = null;
+        public string directory = "";
+        public string tag = "";
         public Image Sprite = null;
 
 
-        public Sprite2D(Vector2 Position, Vector2 Scale, string Directory, string Tag)
+        public Sprite2D(string directory, Vector2 position, ObjectSize scale, string tag)
         {
-            this.Position = Position;
-            this.Scale = Scale;
-            this.Directory = Directory;
-            this.Tag = Tag;
+            this.directory = directory;
+            this.position = position;
+            this.scale = scale;
+            this.tag = tag;
 
+            Image tmp = Image.FromFile($@"{directory}");
 
-            Bitmap sprite = Image.FromFile($"Assets/{Directory}") as Bitmap;
+            Bitmap sprite = new Bitmap(tmp);
 
-            Log.Info($"[SPRITE 2D]({Tag}) - Has been registred");
+            Sprite = sprite;
+
+            Log.Info($"[SPRITE 2D]({tag}) - Has been registred");
             AirEngine.RegisterSprite(this);
         }
         public void DestroySelf()
